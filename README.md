@@ -1,2 +1,1 @@
-# glassintell
-glass 
+find freiza2k1-svg/final-glass-catalog.
