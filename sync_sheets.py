@@ -128,7 +128,8 @@ def sync_spreadsheet(
     dry_run: bool = False,
 ) -> None:
     logging.info("Reading master tab '%s'", MASTER_TAB)
-    master_data = get_values(service, spreadsheet_id, MASTER_TAB)
+    master_range = f"'{MASTER_TAB}'"
+    master_data = get_values(service, spreadsheet_id, master_range)
     if not master_data:
         raise SyncError("Master tab is empty; nothing to synchronise.")
 
