@@ -66,7 +66,9 @@ def load_credentials(service_account_file: str) -> Credentials:
     return Credentials.from_service_account_file(service_account_file, scopes=SCOPES)
 
 
-def create_service(credentials: Credentials):
+from googleapiclient.discovery import Resource
+
+def create_service(credentials: Credentials) -> Resource:
     return build("sheets", "v4", credentials=credentials, cache_discovery=False)
 
 
